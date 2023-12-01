@@ -14,6 +14,7 @@ module.exports = {
                 primaryHover: '#A23E9A',
                 cardBorder: '#E6E8EC',
                 textMuted: '#6B7280',
+                footerBackground: '#F7F7F7',
             },
             height: {
                 135: '135%',
