@@ -1,6 +1,8 @@
 ---
 import type { Project } from '../pages/index.astro'
 import ProjectCard from './ProjectCard.astro'
+import { Icon } from 'astro-icon'
+
 const { projects } = Astro.props
 ---
 
@@ -35,6 +37,18 @@ const { projects } = Astro.props
                     />
                 ))
             }
+        </div>
+        <div
+            class="button-container flex flex-row items-center justify-center mt-10"
+        >
+            <a
+                href="https://github.com/wicida-developers"
+                target="_blank"
+                class="explore-more flex flex-row items-center justify-center text-white bg-primary pr-8 pl-8 pt-4 pb-4 rounded-lg text-base font-bold"
+            >
+                Explore More Of Our Project
+                <Icon name="ep:right" class="ml-4 w-6 h-6" />
+            </a>
         </div>
     </div>
 </section>
