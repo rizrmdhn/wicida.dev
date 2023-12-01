@@ -10,13 +10,18 @@ import DesktopLayout from '../layouts/desktop.astro'
 import MainSection from '../components/MainSection.astro'
 import AboutUs from '../components/AboutUs.astro'
 import Member from '../components/Member.astro'
+import Project from '../components/Project.astro'
 import ToTopButton from '../components/ToTopButton.astro'
 import { getCollection } from 'astro:content'
 
 export type Member = (typeof members)[0]
+export type Project = (typeof projects)[0]
 
 const memberEntries = await getCollection('coreTeamMembers')
 const members = memberEntries.map((entry) => entry.data)
+
+const projectEntries = await getCollection('projectList')
+const projects = projectEntries.map((entry) => entry.data)
 ---
 
 <html lang="en" class="scroll-smooth">
@@ -27,6 +32,7 @@ const members = memberEntries.map((entry) => entry.data)
             <MainSection />
             <AboutUs />
             <Member members={members} />
+            <Project projects={projects} />
             <ToTopButton />
         </DesktopLayout>
     </body>

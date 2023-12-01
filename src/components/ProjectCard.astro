@@ -1,0 +1,33 @@
+---
+import { Icon } from 'astro-icon'
+const { title, description, image, link } = Astro.props
+---
+
+<div class="project-card flex flex-row items-center justify-between gap-20">
+    <div class="project-card__image w-1/2">
+        <img
+            src={image ? image : 'https://placehold.co/660x424'}
+            class="w-[660px] h-[424px] rounded-lg object-contain"
+            alt={title}
+        />
+    </div>
+    <div
+        class="project-card__content w-1/2 flex flex-col items-start justify-evenly gap-8"
+    >
+        <h3
+            class="project-card__title text-center text-3xl font-bold text-accent"
+        >
+            {title ? title : 'Project Title'}
+        </h3>
+        <p class="project-card__description text-lg text-textMuted font-normal">
+            {description ? description : 'Project Description'}
+        </p>
+        <a
+            href={link ? link : '#'}
+            class="project-card__link flex flex-row items-center justify-center text-primary pr-8 pl-8 pt-4 pb-4 border-2 border-primary rounded-lg text-base font-bold"
+        >
+            View Project
+            <Icon name="ep:right" class="ml-4 w-6 h-6" />
+        </a>
+    </div>
+</div>
