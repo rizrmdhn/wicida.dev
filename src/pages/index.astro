@@ -12,6 +12,7 @@ import AboutUs from '../components/AboutUs.astro'
 import Member from '../components/Member.astro'
 import Project from '../components/Project.astro'
 import Achivement from '../components/Achivement.astro'
+import Copyright from '../components/Copyright.astro'
 import ToTopButton from '../components/ToTopButton.astro'
 import { getCollection } from 'astro:content'
 
@@ -35,6 +36,7 @@ const projects = projectEntries.map((entry) => entry.data)
             <Member members={members} />
             <Project projects={projects} />
             <Achivement />
+            <Copyright />
             <ToTopButton />
         </DesktopLayout>
     </body>
