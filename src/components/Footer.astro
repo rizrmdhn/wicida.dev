@@ -1,0 +1,78 @@
+---
+import { Icon } from 'astro-icon'
+---
+
+<div
+    class="footer-container pt-[76px] pb-[76px] pl-9 pr-9 flex flex-row items-center justify-evenly bg-footerBackground mb-4"
+>
+    <div
+        class="widev-container flex flex-col items-start justify-between gap-10"
+    >
+        <div class="widev__image">
+            <img src="/widev.png" alt="widev logo" />
+        </div>
+        <div class="widev_motto">
+            <p class="text-xl font-medium w-80">
+                We Build, We Learn, and <br />
+                 We Develope For Better Future
+            </p>
+        </div>
+        <div class="widev_links">
+            <div class="flex flex-row gap-8">
+                <a href="" class="button text-primary">
+                    <Icon name="ant-design:github-filled" class="w-8 h-8" />
+                </a>
+                <a href="" class="button text-primary">
+                    <Icon name="ant-design:instagram-filled" class="w-8 h-8" />
+                </a>
+                <a href="" class="button text-primary">
+                    <Icon name="ic:outline-facebook" class="w-8 h-8" />
+                </a>
+                <a href="" class="button text-primary">
+                    <Icon name="mdi:linkedin" class="w-8 h-8" />
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="link flex flex-row gap-10">
+        <div class="link__container-1 flex flex-col gap-7">
+            <a href="#about" class="bottom-nav text-2xl">About</a>
+            <a href="#member" class="bottom-nav text-2xl">Member</a>
+        </div>
+        <div class="link__container-2 flex flex-col gap-7">
+            <a href="#project" class="bottom-nav text-2xl">Our Project</a>
+            <a href="#achievement" class="bottom-nav text-2xl">Achievement</a>
+        </div>
+    </div>
+    <div class="email-and-location flex-col flex gap-4">
+        <div class="email">
+            <p class="text-3xl font-medium text-primary">WIDEV@Gmail.com</p>
+        </div>
+        <div class="location w-80">
+            <p class="text-xl font-medium text-start">
+                Jl. M. Yamin, Gn. Kelua, Kec. Samarinda Ulu, Kota Samarinda,
+                Kalimantan Timur 75123
+            </p>
+        </div>
+    </div>
+</div>
+
+<script is:inline>
+    // when anchor clicked scroll to section - 100px
+    const bottomAncorLinks = document.querySelectorAll('.bottom-nav')
+    const bottomAnchorLinksArr = Array.prototype.slice.call(bottomAncorLinks)
+
+    bottomAnchorLinksArr.forEach((link) => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault()
+            const targetId = link.hash
+            const targetElement = document.querySelector(targetId)
+            const targetOffsetTop =
+                window.scrollY + targetElement.getBoundingClientRect().top - 100
+            window.scrollTo({
+                top: targetOffsetTop,
+                behavior: 'smooth',
+            })
+        })
+    })
+</script>
