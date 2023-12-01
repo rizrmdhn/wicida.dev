@@ -6,38 +6,54 @@ import { Icon } from 'astro-icon'
     class="header flex flex-row w-100 pl-9 pr-9 pt-7 justify-between items-center sticky top-0 z-10 bg-white"
 >
     <div class="image-container">
-        <img src="/widev.png" alt="Illustration" class="w-100" />
+        <img src="/widev.png" alt="Illustration" class="xl:w-100 sm:w-1/2" />
     </div>
     <div class="navigation-container">
         <div class="flex flex-row justify-between items-center w-100 gap-8">
-            <a href="#about" class="text-base font-semibold text-accent mr-5"
+            <a
+                href="#about"
+                class="xl:text-base sm:text-sm font-semibold text-accent mr-5"
                 >About Us</a
             >
-            <a href="#member" class="text-base font-semibold text-accent mr-5"
+            <a
+                href="#member"
+                class="xl:text-base sm:text-sm font-semibold text-accent mr-5"
                 >Member</a
             >
-            <a href="#project" class="text-base font-semibold text-accent mr-5"
+            <a
+                href="#project"
+                class="xl:text-base sm:text-sm font-semibold text-accent mr-5"
                 >Project</a
             >
             <a
                 href="#achievement"
-                class="text-base font-semibold text-accent mr-5">Achievement</a
+                class="xl:text-base sm:text-sm font-semibold text-accent mr-5"
+                >Achievement</a
             >
         </div>
     </div>
     <div class="link-icon-container">
         <div class="flex flex-row gap-8">
             <a href="" class="button text-primary">
-                <Icon name="ant-design:github-filled" class="w-8 h-8" />
+                <Icon
+                    name="ant-design:github-filled"
+                    class="xl:w-8 xl:h-8 sm:h-6 sm:w-6"
+                />
             </a>
             <a href="" class="button text-primary">
-                <Icon name="ant-design:instagram-filled" class="w-8 h-8" />
+                <Icon
+                    name="ant-design:instagram-filled"
+                    class="xl:w-8 xl:h-8 sm:h-6 sm:w-6"
+                />
             </a>
             <a href="" class="button text-primary">
-                <Icon name="ic:outline-facebook" class="w-8 h-8" />
+                <Icon
+                    name="ic:outline-facebook"
+                    class="xl:w-8 xl:h-8 sm:h-6 sm:w-6"
+                />
             </a>
             <a href="" class="button text-primary">
-                <Icon name="mdi:linkedin" class="w-8 h-8" />
+                <Icon name="mdi:linkedin" class="xl:w-8 xl:h-8 sm:h-6 sm:w-6" />
             </a>
         </div>
     </div>
