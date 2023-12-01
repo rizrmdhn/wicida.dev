@@ -1,16 +1,21 @@
 ---
-// Component Imports
+// Global Imports
 import '@fontsource/poppins'
+import 'animate.css'
+
+// Component Imports
 import Header from '../components/Header.astro'
 import DesktopLayout from '../layouts/desktop.astro'
 import MainSection from '../components/MainSection.astro'
+import AboutUs from '../components/AboutUs.astro'
+import ToTopButton from '../components/ToTopButton.astro'
 import { getCollection } from 'astro:content'
 
 const memberEntries = await getCollection('coreTeamMembers')
 const members = memberEntries.map((entry) => entry.data)
 ---
 
-<html lang="en">
+<html lang="en" class="scroll-smooth">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
@@ -23,6 +28,8 @@ const members = memberEntries.map((entry) => entry.data)
         <Header />
         <DesktopLayout>
             <MainSection />
+            <AboutUs />
+            <ToTopButton />
         </DesktopLayout>
     </body>
 </html>

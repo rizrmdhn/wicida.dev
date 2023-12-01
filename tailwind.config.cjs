@@ -11,6 +11,7 @@ module.exports = {
                 primary: '#772E71',
                 secondary: '#FAFAFA',
                 accent: '#0F0F0F',
+                primaryHover: '#A23E9A',
             },
             height: {
                 135: '135%',
