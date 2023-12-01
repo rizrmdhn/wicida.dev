@@ -12,6 +12,7 @@ module.exports = {
                 secondary: '#FAFAFA',
                 accent: '#0F0F0F',
                 primaryHover: '#A23E9A',
+                cardBorder: '#E6E8EC',
             },
             height: {
                 135: '135%',

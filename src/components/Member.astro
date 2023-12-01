@@ -1,0 +1,38 @@
+---
+const { members } = Astro.props
+
+import TeamCard from '../components/TeamCard.astro'
+import type { Member } from '../pages/index.astro'
+---
+
+<section id="member" class="member mt-40 pl-14 pr-14 mb-40">
+    <div class="container flex flex-col items-center justify-center">
+        <div
+            class="title-container flex flex-col items-center justify-center mb-10"
+        >
+            <h2 class="text-6xl font-bold text-center text-primary mb-9">
+                WIDEV Team Member
+            </h2>
+            <p class="text-center text-accent w-3/6">
+                We are the person who been teaching, developing, and learning so
+                many new stuff in technology as Web Development, Mobile
+                Development, Data Analyst, UI/UX and other kinda things that
+                make us is who it is
+            </p>
+        </div>
+        <div
+            class="team-container flex flex-row items-start flex-wrap justify-evenly w-full"
+        >
+            {
+                members.map((member: Member) => (
+                    <TeamCard
+                        name={member.name}
+                        role={member.role}
+                        image={member.image}
+                        social={member.social}
+                    />
+                ))
+            }
+        </div>
+    </div>
+</section>
