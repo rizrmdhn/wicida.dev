@@ -42,3 +42,23 @@ import { Icon } from 'astro-icon'
         </div>
     </div>
 </div>
+
+<script is:inline>
+    // when anchor clicked scroll to section - 100px
+    const anchorLinks = document.querySelectorAll('a[href^="#"]')
+    const anchorLinksArr = Array.prototype.slice.call(anchorLinks)
+
+    anchorLinksArr.forEach((link) => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault()
+            const targetId = link.hash
+            const targetElement = document.querySelector(targetId)
+            const targetOffsetTop =
+                window.scrollY + targetElement.getBoundingClientRect().top - 100
+            window.scrollTo({
+                top: targetOffsetTop,
+                behavior: 'smooth',
+            })
+        })
+    })
+</script>
