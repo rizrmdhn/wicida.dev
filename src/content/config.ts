@@ -1,9 +1,17 @@
-import { defineCollection } from "astro:content"
-import { coreTeamMemberSchema } from "./_schemas"
+import { defineCollection } from 'astro:content'
+import { coreTeamMemberSchema, projectListSchema } from './_schemas'
 
 const coreTeamMemberCollection = defineCollection({
-  type: "data",
-  schema: coreTeamMemberSchema,
+    type: 'data',
+    schema: coreTeamMemberSchema,
 })
 
-export const collections = { coreTeamMembers: coreTeamMemberCollection }
+const projectListCollection = defineCollection({
+    type: 'data',
+    schema: projectListSchema,
+})
+
+export const collections = {
+    coreTeamMembers: coreTeamMemberCollection,
+    projectList: projectListCollection,
+}

@@ -13,6 +13,7 @@ module.exports = {
                 accent: '#0F0F0F',
                 primaryHover: '#A23E9A',
                 cardBorder: '#E6E8EC',
+                textMuted: '#6B7280',
             },
             height: {
                 135: '135%',

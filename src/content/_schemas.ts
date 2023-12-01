@@ -14,3 +14,10 @@ export const coreTeamMemberSchema = z.object({
         })
         .optional(),
 })
+
+export const projectListSchema = z.object({
+    title: z.string(),
+    description: z.string(),
+    image: z.string().optional(),
+    link: z.string().optional(),
+})

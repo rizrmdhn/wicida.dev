@@ -1,0 +1,37 @@
+---
+import type { Project } from '../pages/index.astro'
+import ProjectCard from './ProjectCard.astro'
+const { projects } = Astro.props
+---
+
+<section class="project mt-40 pl-14 pr-14 mb-40" id="#project">
+    <div class="container flex flex-col items-center justify-center">
+        <div
+            class="title-container flex flex-col items-center justify-center mb-10"
+        >
+            <h2 class="text-6xl font-bold text-center text-primary mb-9">
+                Our Project
+            </h2>
+            <p class="text-center text-accent w-3/6">
+                We are the person who been teaching, developing, and learning so
+                many new stuff in technology as Web Development, Mobile
+                Development, Data Analyst, UI/UX and other kinda things that
+                make us is who it is
+            </p>
+        </div>
+        <div
+            class="project-container flex flex-col items-center justify-evenly gap-16"
+        >
+            {
+                projects.map((project: Project) => (
+                    <ProjectCard
+                        title={project.title}
+                        description={project.description}
+                        image={project.image}
+                        link={project.link}
+                    />
+                ))
+            }
+        </div>
+    </div>
+</section>
