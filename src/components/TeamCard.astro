@@ -1,0 +1,60 @@
+---
+import { Icon } from 'astro-icon'
+const { name, role, image, social } = Astro.props
+---
+
+<div
+    class="team-card flex flex-col items-center justify-center gap-6 pt-8 pb-6 pl-6 pr-6 w-72 bg-secondary rounded-xl border-2 border-gray-50 shadow-md"
+>
+    <div class="team-card__image rounded">
+        <img src={image} alt={name} class="rounded-full w-32 h-32" />
+    </div>
+    <div class="team-card__details text-center">
+        <h3 class="text-xl font-bold mb-5">
+            {name}
+        </h3>
+        <p class="text-sm text-gray-500">
+            {role}
+        </p>
+    </div>
+    <div class="line-divder w-full border-t-2 border-cardBorder"></div>
+    <div
+        class="team-card__social w-full flex flex-row justify-center items-center"
+    >
+        {
+            social?.github && (
+                <a href={social.github} target="_blank" class="text-primary">
+                    <Icon name="mdi:github" class="w-8 h-8" />
+                </a>
+            )
+        }
+        {
+            social?.facebook && (
+                <a href={social.facebook} target="_blank" class="text-primary">
+                    <Icon name="mdi:facebook" class="w-8 h-8" />
+                </a>
+            )
+        }
+        {
+            social?.instagram && (
+                <a href={social.instagram} target="_blank" class="text-primary">
+                    <Icon name="mdi:instagram" class="w-8 h-8" />
+                </a>
+            )
+        }
+        {
+            social?.twitter && (
+                <a href={social.twitter} target="_blank" class="text-primary">
+                    <Icon name="mdi:twitter" class="w-8 h-8" />
+                </a>
+            )
+        }
+        {
+            social?.linkedin && (
+                <a href={social.linkedin} target="_blank" class="text-primary">
+                    <Icon name="ri:linkedin-fill" class="w-8 h-8" />
+                </a>
+            )
+        }
+    </div>
+</div>

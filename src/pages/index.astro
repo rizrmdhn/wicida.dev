@@ -4,31 +4,29 @@ import '@fontsource/poppins'
 import 'animate.css'
 
 // Component Imports
+import Head from '../components/Head.astro'
 import Header from '../components/Header.astro'
 import DesktopLayout from '../layouts/desktop.astro'
 import MainSection from '../components/MainSection.astro'
 import AboutUs from '../components/AboutUs.astro'
+import Member from '../components/Member.astro'
 import ToTopButton from '../components/ToTopButton.astro'
 import { getCollection } from 'astro:content'
+
+export type Member = (typeof members)[0]
 
 const memberEntries = await getCollection('coreTeamMembers')
 const members = memberEntries.map((entry) => entry.data)
 ---
 
 <html lang="en" class="scroll-smooth">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="generator" content={Astro.generator} />
-        <title>Wicida Developer</title>
-    </head>
-
+    <Head />
     <body>
         <Header />
         <DesktopLayout>
             <MainSection />
             <AboutUs />
+            <Member members={members} />
             <ToTopButton />
         </DesktopLayout>
     </body>
