@@ -1,16 +1,16 @@
-import { z } from "astro:content"
+import { z } from 'astro:content'
 
 export const coreTeamMemberSchema = z.object({
-  name: z.string(),
-  role: z.string(),
-  image: z.string(),
-  social: z
-    .object({
-      github: z.string(),
-      linkedin: z.string(),
-      facebook: z.string(),
-      instagram: z.string(),
-      twitter: z.string(),
-    })
-    .optional(),
+    name: z.string(),
+    role: z.string(),
+    image: z.string(),
+    social: z
+        .object({
+            github: z.string().optional(),
+            linkedin: z.string().optional(),
+            facebook: z.string().optional(),
+            instagram: z.string().optional(),
+            twitter: z.string().optional(),
+        })
+        .optional(),
 })

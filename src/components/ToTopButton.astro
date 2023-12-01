@@ -1,0 +1,51 @@
+<button
+    onclick="topFunction()"
+    id="myBtn"
+    title="Go to top"
+    class="back-to-top hidden fixed bottom-5 right-5 z-50 p-2 bg-primary rounded-full text-white focus:outline-none hover:bg-primaryHover transition animate__animated animate__fadeIn"
+>
+    <svg
+        class="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+        <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M5 11l7-7 7 7M5 19l7-7 7 7"></path>
+    </svg>
+</button>
+
+<script is:inline>
+    //  When the user scrolls down 20px from the top of the document, show the button and the button should be following the user's scroll in the bottom right corner of the screen.
+
+    window.onscroll = function () {
+        scrollFunction()
+    }
+
+    function scrollFunction() {
+        if (document.documentElement.scrollTop > 40) {
+            document.getElementById('myBtn').style.display = 'block'
+            document
+                .getElementById('myBtn')
+                .classList.replace('animate__fadeOut', 'animate__fadeIn')
+        } else if (document.documentElement.scrollTop == 0) {
+            document
+                .getElementById('myBtn')
+                .classList.replace('animate__fadeIn', 'animate__fadeOut')
+            // timeout to wait for the animation to finish
+            setTimeout(() => {
+                document.getElementById('myBtn').style.display = 'none'
+            }, 500)
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0 // For Safari
+        document.documentElement.scrollTop = 0 // For Chrome, Firefox, IE and Opera
+    }
+</script>
