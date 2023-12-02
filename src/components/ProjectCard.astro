@@ -24,9 +24,12 @@ const { title, description, image, link } = Astro.props
         </p>
         <a
             href={link ? link : '#'}
-            class="project-card__link flex flex-row items-center justify-center text-primary pr-8 pl-8 pt-4 pb-4 border-2 border-primary rounded-lg text-base font-bold"
+            class="project-card__link flex flex-row items-center justify-center text-primary pr-8 pl-8 pt-4 pb-4 border-2 border-primary rounded-lg text-base font-bold group hover:text-white relative overflow-hidden"
         >
-            View Project
+            <span
+                class="absolute bg-primary w-1 h-full top-0 left-0 group-hover:w-full -z-10 duration-[250ms] transition-all ease-out"
+            ></span>
+             View Project
             <Icon name="ep:right" class="ml-4 w-6 h-6" />
         </a>
     </div>
