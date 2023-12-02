@@ -1,38 +1,54 @@
 ---
 import { Icon } from 'astro-icon'
+
+const navLinks = [
+    {
+        name: 'About Us',
+        href: '#about',
+    },
+    {
+        name: 'Member',
+        href: '#member',
+    },
+    {
+        name: 'Project',
+        href: '#project',
+    },
+    {
+        name: 'Achievement',
+        href: '#achievement',
+    },
+]
 ---
 
 <div
-    class="header flex flex-row w-100 pl-9 pr-9 pt-7 justify-between items-center sticky top-0 z-10 bg-white"
+    class="header flex flex-row w-100 px-3 py-5 xl:px-9 xl:py-7 justify-between items-center sticky top-0 z-10 bg-white"
 >
     <div class="image-container">
-        <img src="/widev.png" alt="Illustration" class="xl:w-100 sm:w-1/2" />
+        <img
+            src="/widev.png"
+            alt="Illustration"
+            class="w-20 xl:w-100 sm:w-1/2"
+        />
     </div>
-    <div class="navigation-container">
+    <div class="navigation-container hidden md:block">
         <div class="flex flex-row justify-between items-center w-100 gap-8">
-            <a
-                href="#about"
-                class="xl:text-base sm:text-sm font-semibold text-accent mr-5"
-                >About Us</a
-            >
-            <a
-                href="#member"
-                class="xl:text-base sm:text-sm font-semibold text-accent mr-5"
-                >Member</a
-            >
-            <a
-                href="#project"
-                class="xl:text-base sm:text-sm font-semibold text-accent mr-5"
-                >Project</a
-            >
-            <a
-                href="#achievement"
-                class="xl:text-base sm:text-sm font-semibold text-accent mr-5"
-                >Achievement</a
-            >
+            {
+                navLinks.map((link) => {
+                    return (
+                        <a
+                            href={link.href}
+                            class="xl:text-base sm:text-sm font-semibold text-accent mr-5 relative group"
+                        >
+                            <span class="bottom-0 w-1 h-1 absolute group-hover:bg-primary group-hover:w-full transition-all duration-200 ease-in-out" />
+                            {link.name}
+                        </a>
+                    )
+                })
+            }
         </div>
     </div>
-    <div class="link-icon-container">
+    <div class="link-icon-container hidden md:block">
         <div class="flex flex-row gap-8">
             <a href="" class="button text-primary">
                 <Icon

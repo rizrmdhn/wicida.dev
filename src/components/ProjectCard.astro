@@ -3,30 +3,37 @@ import { Icon } from 'astro-icon'
 const { title, description, image, link } = Astro.props
 ---
 
-<div class="project-card flex flex-row items-center justify-between gap-10">
-    <div class="project-card__image w-1/2">
+<div
+    class="project-card flex flex-col mt-4 px-8 md:flex-row items-center justify-between md:gap-5 xl:mt-0 xl:gap-10"
+>
+    <div class="project-card__image md:w-1/2">
         <img
             src={image ? image : 'https://placehold.co/660x424'}
-            class="w-[660px] h-[424px] rounded-lg object-contain"
+            class="w-full rounded-lg object-contain"
             alt={title}
         />
     </div>
     <div
-        class="project-card__content w-1/2 flex flex-col items-start justify-evenly gap-8"
+        class="project-card__content w-full gap-2 md:w-1/2 flex flex-col items-start justify-evenly xl:gap-8"
     >
         <h3
-            class="project-card__title text-center text-3xl font-bold text-accent"
+            class="project-card__title text-center text-xl xl:text-3xl font-bold text-accent"
         >
             {title ? title : 'Project Title'}
         </h3>
-        <p class="project-card__description text-lg text-textMuted font-normal">
+        <p
+            class="project-card__description text-sm text-justify xl:text-lg text-textMuted font-normal"
+        >
             {description ? description : 'Project Description'}
         </p>
         <a
             href={link ? link : '#'}
-            class="project-card__link flex flex-row items-center justify-center text-primary pr-8 pl-8 pt-4 pb-4 border-2 border-primary rounded-lg text-base font-bold"
+            class="project-card__link ml-auto md:ml-0 flex flex-row items-center justify-center text-primary px-4 py-2 xl:px-8 xl:py-4 border-2 border-primary rounded-lg text-xs md:text-base font-bold group hover:text-white relative overflow-hidden"
         >
-            View Project
+            <span
+                class="absolute bg-white group-hover:bg-primary w-1 h-full top-0 left-0 group-hover:w-full -z-10 duration-[250ms] transition-all ease-out"
+            ></span>
+             View Project
             <Icon name="ep:right" class="ml-4 w-6 h-6" />
         </a>
     </div>

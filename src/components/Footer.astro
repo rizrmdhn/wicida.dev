@@ -3,16 +3,18 @@ import { Icon } from 'astro-icon'
 ---
 
 <div
-    class="footer-container pt-[76px] pb-[76px] pl-9 pr-9 flex flex-row items-center justify-evenly bg-footerBackground mb-4 sm:gap-20"
+    class="footer-container py-16 pl-9 pr-9 flex flex-col md:flex-row items-center justify-evenly bg-footerBackground gap-2 md:gap-5 xl:gap-14"
 >
     <div
-        class="widev-container flex flex-col items-start justify-between gap-10"
+        class="widev-container flex flex-col items-center md:items-start justify-between gap-10"
     >
         <div class="widev__image">
             <img src="/widev.png" alt="widev logo" class="sm:w-1/2 xl:w-100" />
         </div>
         <div class="widev_motto">
-            <p class="xl:text-xl font-medium xl:w-80 sm:w-100 sm:text-base">
+            <p
+                class="xl:text-xl font-medium text-center md:text-left xl:w-80 sm:w-100 sm:text-base"
+            >
                 We Build, We Learn, and <br />
                  We Develope For Better Future
             </p>
@@ -46,8 +48,8 @@ import { Icon } from 'astro-icon'
             </div>
         </div>
     </div>
-    <div class="link flex flex-row gap-10">
-        <div class="link__container-1 flex flex-col gap-7">
+    <div class="link flex flex-row gap-3 md:gap-10">
+        <div class="link__container-1 flex md:flex-col gap-3 md:gap-7">
             <a href="#about" class="bottom-nav xl:text-2xl sm:text-base"
                 >About</a
             >
@@ -55,16 +57,16 @@ import { Icon } from 'astro-icon'
                 >Member</a
             >
         </div>
-        <div class="link__container-2 flex flex-col gap-7">
+        <div class="link__container-2 flex md:flex-col gap-3 md:gap-7">
             <a href="#project" class="bottom-nav xl:text-2xl sm:text-base"
-                >Our Project</a
+                >Project</a
             >
             <a href="#achievement" class="bottom-nav xl:text-2xl sm:text-base"
                 >Achievement</a
             >
         </div>
     </div>
-    <div class="email-and-location flex-col flex gap-4">
+    <div class="email-and-location mt-4 md:flex-col flex gap-4">
         <div class="email">
             <p class="xl:text-3xl sm:text-xl font-medium text-primary">
                 WIDEV@Gmail.com
