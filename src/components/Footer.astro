@@ -3,17 +3,17 @@ import { Icon } from 'astro-icon'
 ---
 
 <div
-    class="footer-container py-16 pl-9 pr-9 flex flex-col md:flex-row items-center justify-evenly bg-footerBackground gap-2 md:gap-5 xl:gap-14"
+    class="footer-container flex flex-col items-center justify-evenly gap-2 bg-footerBackground py-16 pl-9 pr-9 md:flex-row md:gap-5 xl:gap-14"
 >
     <div
-        class="widev-container flex flex-col items-center md:items-start justify-between gap-10"
+        class="widev-container flex flex-col items-center justify-between gap-10 md:items-start"
     >
         <div class="widev__image">
-            <img src="/widev.png" alt="widev logo" class="sm:w-1/2 xl:w-100" />
+            <img src="/widev.png" alt="widev logo" class="w-100" />
         </div>
         <div class="widev_motto">
             <p
-                class="xl:text-xl font-medium text-center md:text-left xl:w-80 sm:w-100 sm:text-base"
+                class="sm:w-100 text-center font-medium sm:text-base md:text-left xl:w-80 xl:text-xl"
             >
                 We Build, We Learn, and <br />
                  We Develope For Better Future
@@ -24,56 +24,62 @@ import { Icon } from 'astro-icon'
                 <a href="" class="button text-primary">
                     <Icon
                         name="ant-design:github-filled"
-                        class="xl:w-8 xl:h-8 sm:h-6 sm:w-6"
+                        class="sm:h-6 sm:w-6 xl:h-8 xl:w-8"
                     />
                 </a>
                 <a href="" class="button text-primary">
                     <Icon
                         name="ant-design:instagram-filled"
-                        class="xl:w-8 xl:h-8 sm:h-6 sm:w-6"
+                        class="sm:h-6 sm:w-6 xl:h-8 xl:w-8"
                     />
                 </a>
                 <a href="" class="button text-primary">
                     <Icon
                         name="ic:outline-facebook"
-                        class="xl:w-8 xl:h-8 sm:h-6 sm:w-6"
+                        class="sm:h-6 sm:w-6 xl:h-8 xl:w-8"
                     />
                 </a>
                 <a href="" class="button text-primary">
                     <Icon
                         name="mdi:linkedin"
-                        class="xl:w-8 xl:h-8 sm:h-6 sm:w-6"
+                        class="sm:h-6 sm:w-6 xl:h-8 xl:w-8"
                     />
                 </a>
             </div>
         </div>
     </div>
     <div class="link flex flex-row gap-3 md:gap-10">
-        <div class="link__container-1 flex md:flex-col gap-3 md:gap-7">
-            <a href="#about" class="bottom-nav xl:text-2xl sm:text-base"
+        <div class="link__container-1 flex gap-3 md:w-2/6 md:flex-col md:gap-7">
+            <a href="#about" class="bottom-nav sm:text-base xl:text-2xl"
                 >About</a
             >
-            <a href="#member" class="bottom-nav xl:text-2xl sm:text-base"
+            <a href="#member" class="bottom-nav sm:text-base xl:text-2xl"
                 >Member</a
             >
         </div>
-        <div class="link__container-2 flex md:flex-col gap-3 md:gap-7">
-            <a href="#project" class="bottom-nav xl:text-2xl sm:text-base"
+        <div class="link__container-2 flex gap-3 md:w-2/6 md:flex-col md:gap-7">
+            <a href="#project" class="bottom-nav sm:text-base xl:text-2xl"
                 >Project</a
             >
-            <a href="#achievement" class="bottom-nav xl:text-2xl sm:text-base"
+            <a href="#achievement" class="bottom-nav sm:text-base xl:text-2xl"
                 >Achievement</a
             >
         </div>
     </div>
-    <div class="email-and-location mt-4 md:flex-col flex gap-4">
+    <div
+        class="email-and-location mt-4 flex flex-col gap-4 md:w-2/6 md:flex-col"
+    >
         <div class="email">
-            <p class="xl:text-3xl sm:text-xl font-medium text-primary">
+            <p
+                class="text-center text-xl font-medium text-primary sm:text-xl md:text-start xl:text-3xl"
+            >
                 WIDEV@Gmail.com
             </p>
         </div>
-        <div class="location xl:w-80 sm:w-100">
-            <p class="xl:text-xl sm:text-sm font-medium text-start">
+        <div class="location sm:w-100 xl:w-80">
+            <p
+                class="text-center font-medium sm:text-sm md:text-start xl:text-xl"
+            >
                 Jl. M. Yamin, Gn. Kelua, Kec. Samarinda Ulu, Kota Samarinda,
                 Kalimantan Timur 75123
             </p>
