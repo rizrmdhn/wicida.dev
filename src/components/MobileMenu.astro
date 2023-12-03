@@ -25,12 +25,12 @@ const navLinks = [
     id="mobile-menu"
     class="mobile-menu-container h-screen fixed w-screen animate__animated animate__fadeInRight z-20 top-16 hidden"
 >
-    <div class="h-full px-3 py-4 overflow-y-auto bg-white">
+    <div class="h-full py-4 overflow-y-auto bg-white">
         <ul class="flex flex-col justify-between items-start gap-5">
             {
                 navLinks.map((link) => {
                     return (
-                        <li class="border-b-2 borderaccent w-full p-2">
+                        <li class="border-b-2 borderaccent w-full px-3 py-2">
                             <a
                                 id="mobile-menu-link"
                                 href={link.href}
@@ -45,7 +45,7 @@ const navLinks = [
             }
         </ul>
         <div class="link-icon-container mt-8">
-            <div class="flex flex-row gap-8">
+            <div class="flex flex-row gap-8 items-center justify-center">
                 <a href="" class="button text-primary">
                     <Icon name="ant-design:github-filled" class="w-8 h-8" />
                 </a>
