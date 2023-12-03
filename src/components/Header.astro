@@ -22,25 +22,25 @@ const navLinks = [
 ---
 
 <div
-    class="header flex flex-row w-100 px-3 py-5 xl:px-9 xl:py-7 justify-between items-center sticky top-0 z-30 bg-white"
+    class="header w-100 sticky top-0 z-30 flex flex-row items-center justify-between bg-white px-3 py-5 xl:px-9 xl:py-7"
 >
     <div class="image-container">
         <img
             src="/widev.png"
             alt="Illustration"
-            class="w-20 xl:w-100 sm:w-1/2"
+            class="xl:w-100 w-20 sm:w-1/2"
         />
     </div>
     <div class="navigation-container hidden md:block">
-        <div class="flex flex-row justify-between items-center w-100 gap-8">
+        <div class="w-100 flex flex-row items-center justify-between gap-8">
             {
                 navLinks.map((link) => {
                     return (
                         <a
                             href={link.href}
-                            class="xl:text-base sm:text-sm font-semibold text-accent mr-5 relative group"
+                            class="group relative mr-5 font-semibold text-accent sm:text-sm xl:text-base"
                         >
-                            <span class="bottom-0 w-1 h-1 absolute group-hover:bg-primary group-hover:w-full transition-all duration-200 ease-in-out" />
+                            <span class="absolute bottom-0 h-1 w-1 transition-all duration-200 ease-in-out group-hover:w-full group-hover:bg-primary" />
                             {link.name}
                         </a>
                     )
@@ -50,26 +50,32 @@ const navLinks = [
     </div>
     <div class="link-icon-container hidden md:block">
         <div class="flex flex-row gap-8">
-            <a href="" class="button text-primary">
+            <a
+                href="https://github.com/wicida-developers"
+                class="button text-primary"
+            >
                 <Icon
                     name="ant-design:github-filled"
-                    class="xl:w-8 xl:h-8 sm:h-6 sm:w-6"
+                    class="sm:h-6 sm:w-6 xl:h-8 xl:w-8"
                 />
             </a>
-            <a href="" class="button text-primary">
+            <a
+                href="https://www.instagram.com/wicida.developers/"
+                class="button text-primary"
+            >
                 <Icon
                     name="ant-design:instagram-filled"
-                    class="xl:w-8 xl:h-8 sm:h-6 sm:w-6"
+                    class="sm:h-6 sm:w-6 xl:h-8 xl:w-8"
                 />
             </a>
             <a href="" class="button text-primary">
                 <Icon
                     name="ic:outline-facebook"
-                    class="xl:w-8 xl:h-8 sm:h-6 sm:w-6"
+                    class="sm:h-6 sm:w-6 xl:h-8 xl:w-8"
                 />
             </a>
             <a href="" class="button text-primary">
-                <Icon name="mdi:linkedin" class="xl:w-8 xl:h-8 sm:h-6 sm:w-6" />
+                <Icon name="mdi:linkedin" class="sm:h-6 sm:w-6 xl:h-8 xl:w-8" />
             </a>
         </div>
     </div>
@@ -81,7 +87,7 @@ const navLinks = [
             aria-label="Menu"
             aria-controls="navigation"
         >
-            <Icon name="ion:menu" class="w-8 h-8 text-primary" />
+            <Icon name="ion:menu" class="h-8 w-8 text-primary" />
         </button>
     </div>
 </div>

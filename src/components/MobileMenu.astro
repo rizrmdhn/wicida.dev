@@ -23,20 +23,20 @@ const navLinks = [
 
 <div
     id="mobile-menu"
-    class="mobile-menu-container h-screen fixed w-screen animate__animated animate__fadeInRight z-20 top-16 hidden"
+    class="mobile-menu-container animate__animated animate__fadeInRight fixed top-16 z-20 hidden h-screen w-screen"
 >
-    <div class="h-full py-4 overflow-y-auto bg-white">
-        <ul class="flex flex-col justify-between items-start gap-5">
+    <div class="h-full overflow-y-auto bg-white py-4">
+        <ul class="flex flex-col items-start justify-between gap-5">
             {
                 navLinks.map((link) => {
                     return (
-                        <li class="border-b-2 borderaccent w-full px-3 py-2">
+                        <li class="borderaccent w-full border-b-2 px-3 py-2">
                             <a
                                 id="mobile-menu-link"
                                 href={link.href}
-                                class="xl:text-base sm:text-sm font-semibold text-accent mr-5 relative group"
+                                class="group relative mr-5 font-semibold text-accent sm:text-sm xl:text-base"
                             >
-                                <span class="bottom-0 w-1 h-1 absolute group-hover:bg-primary group-hover:w-full transition-all duration-200 ease-in-out" />
+                                <span class="absolute bottom-0 h-1 w-1 transition-all duration-200 ease-in-out group-hover:w-full group-hover:bg-primary" />
                                 {link.name}
                             </a>
                         </li>
@@ -45,18 +45,24 @@ const navLinks = [
             }
         </ul>
         <div class="link-icon-container mt-8">
-            <div class="flex flex-row gap-8 items-center justify-center">
-                <a href="" class="button text-primary">
-                    <Icon name="ant-design:github-filled" class="w-8 h-8" />
+            <div class="flex flex-row items-center justify-center gap-8">
+                <a
+                    href="https://github.com/wicida-developers"
+                    class="button text-primary"
+                >
+                    <Icon name="ant-design:github-filled" class="h-8 w-8" />
+                </a>
+                <a
+                    href="https://www.instagram.com/wicida.developers/"
+                    class="button text-primary"
+                >
+                    <Icon name="ant-design:instagram-filled" class="h-8 w-8" />
                 </a>
                 <a href="" class="button text-primary">
-                    <Icon name="ant-design:instagram-filled" class="w-8 h-8" />
+                    <Icon name="ic:outline-facebook" class="h-8 w-8" />
                 </a>
                 <a href="" class="button text-primary">
-                    <Icon name="ic:outline-facebook" class="w-8 h-8" />
-                </a>
-                <a href="" class="button text-primary">
-                    <Icon name="mdi:linkedin" class="w-8 h-8" />
+                    <Icon name="mdi:linkedin" class="h-8 w-8" />
                 </a>
             </div>
         </div>
