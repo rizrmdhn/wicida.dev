@@ -6,7 +6,6 @@ import 'animate.css'
 // Component Imports
 import Head from '../components/Head.astro'
 import Header from '../components/Header.astro'
-import DesktopLayout from '../layouts/desktop.astro'
 import MainSection from '../components/MainSection.astro'
 import AboutUs from '../components/AboutUs.astro'
 import Member from '../components/Member.astro'
@@ -17,6 +16,7 @@ import Copyright from '../components/Copyright.astro'
 import ToTopButton from '../components/ToTopButton.astro'
 import JoinButton from '../components/JoinButton.astro'
 import { getCollection } from 'astro:content'
+import MobileMenu from '../components/MobileMenu.astro'
 
 export type Member = (typeof members)[0]
 export type Project = (typeof projects)[0]
@@ -31,8 +31,9 @@ const projects = projectEntries.map((entry) => entry.data)
 <html lang="en" class="scroll-smooth">
     <Head />
     <body>
-        <Header />
-        <DesktopLayout>
+        <MobileMenu />
+        <main id="main-content">
+            <Header />
             <MainSection />
             <AboutUs />
             <Member members={members} />
@@ -42,6 +43,6 @@ const projects = projectEntries.map((entry) => entry.data)
             <Copyright />
             <JoinButton />
             <ToTopButton />
-        </DesktopLayout>
+        </main>
     </body>
 </html>

@@ -1,0 +1,79 @@
+---
+import { Icon } from 'astro-icon'
+
+const navLinks = [
+    {
+        name: 'About Us',
+        href: '#about',
+    },
+    {
+        name: 'Member',
+        href: '#member',
+    },
+    {
+        name: 'Project',
+        href: '#project',
+    },
+    {
+        name: 'Achievement',
+        href: '#achievement',
+    },
+]
+---
+
+<div
+    id="mobile-menu"
+    class="mobile-menu-container h-screen fixed w-screen animate__animated animate__fadeInRight z-20 top-16 hidden"
+>
+    <div class="h-full px-3 py-4 overflow-y-auto bg-white">
+        <ul class="flex flex-col justify-between items-start gap-5">
+            {
+                navLinks.map((link) => {
+                    return (
+                        <li class="border-b-2 borderaccent w-full p-2">
+                            <a
+                                id="mobile-menu-link"
+                                href={link.href}
+                                class="xl:text-base sm:text-sm font-semibold text-accent mr-5 relative group"
+                            >
+                                <span class="bottom-0 w-1 h-1 absolute group-hover:bg-primary group-hover:w-full transition-all duration-200 ease-in-out" />
+                                {link.name}
+                            </a>
+                        </li>
+                    )
+                })
+            }
+        </ul>
+        <div class="link-icon-container mt-8">
+            <div class="flex flex-row gap-8">
+                <a href="" class="button text-primary">
+                    <Icon name="ant-design:github-filled" class="w-8 h-8" />
+                </a>
+                <a href="" class="button text-primary">
+                    <Icon name="ant-design:instagram-filled" class="w-8 h-8" />
+                </a>
+                <a href="" class="button text-primary">
+                    <Icon name="ic:outline-facebook" class="w-8 h-8" />
+                </a>
+                <a href="" class="button text-primary">
+                    <Icon name="mdi:linkedin" class="w-8 h-8" />
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script is:inline>
+    const menu = document.getElementById('mobile-menu')
+    const menuLink = document.querySelectorAll('#mobile-menu-link')
+
+    menuLink.forEach((link) => {
+        link.addEventListener('click', () => {
+            menu.classList.remove('animate__fadeInRight')
+            menu.classList.add('animate__fadeOutRight')
+            setTimeout(() => {
+                menu.classList.add('hidden')
+            }, 500)
+        })
+    })
+</script>

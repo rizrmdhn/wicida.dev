@@ -22,7 +22,7 @@ const navLinks = [
 ---
 
 <div
-    class="header flex flex-row w-100 px-3 py-5 xl:px-9 xl:py-7 justify-between items-center sticky top-0 z-10 bg-white"
+    class="header flex flex-row w-100 px-3 py-5 xl:px-9 xl:py-7 justify-between items-center sticky top-0 z-30 bg-white"
 >
     <div class="image-container">
         <img
@@ -73,6 +73,17 @@ const navLinks = [
             </a>
         </div>
     </div>
+    <div class="hamburger-container md:hidden">
+        <button
+            onclick="openMobileMenu()"
+            class="hamburger hamburger--collapse"
+            type="button"
+            aria-label="Menu"
+            aria-controls="navigation"
+        >
+            <Icon name="ion:menu" class="w-8 h-8 text-primary" />
+        </button>
+    </div>
 </div>
 
 <script is:inline>
@@ -93,4 +104,36 @@ const navLinks = [
             })
         })
     })
+
+    function openMobileMenu() {
+        const mobileMenu = document.querySelector('#mobile-menu')
+
+        const isMobileMenuHidden = mobileMenu.classList.contains('hidden')
+
+        if (isMobileMenuHidden) {
+            const isMobileMenuFadeOut = mobileMenu.classList.contains(
+                'animate__fadeOutRight'
+            )
+
+            if (isMobileMenuFadeOut) {
+                mobileMenu.classList.replace(
+                    'animate__fadeOutRight',
+                    'animate__fadeInRight'
+                )
+            }
+
+            setTimeout(() => {
+                mobileMenu.classList.remove('hidden')
+            }, 500)
+        } else {
+            mobileMenu.classList.replace(
+                'animate__fadeInRight',
+                'animate__fadeOutRight'
+            )
+
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden')
+            }, 500)
+        }
+    }
 </script>
