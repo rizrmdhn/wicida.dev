@@ -89,57 +89,60 @@ const navLinks = [
         >
             <Icon name="ion:menu" class="h-8 w-8 text-primary" />
         </button>
+
+        <script is:inline>
+            // when anchor clicked scroll to section - 100px
+            const anchorLinks = document.querySelectorAll('a[href^="#"]')
+            const anchorLinksArr = Array.prototype.slice.call(anchorLinks)
+
+            anchorLinksArr.forEach((link) => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault()
+                    const targetId = link.hash
+                    const targetElement = document.querySelector(targetId)
+                    const targetOffsetTop =
+                        window.scrollY +
+                        targetElement.getBoundingClientRect().top -
+                        100
+                    window.scrollTo({
+                        top: targetOffsetTop,
+                        behavior: 'smooth',
+                    })
+                })
+            })
+
+            function openMobileMenu() {
+                const mobileMenu = document.querySelector('#mobile-menu')
+
+                const isMobileMenuHidden =
+                    mobileMenu.classList.contains('hidden')
+
+                if (isMobileMenuHidden) {
+                    const isMobileMenuFadeOut = mobileMenu.classList.contains(
+                        'animate__fadeOutRight'
+                    )
+
+                    if (isMobileMenuFadeOut) {
+                        mobileMenu.classList.replace(
+                            'animate__fadeOutRight',
+                            'animate__fadeInRight'
+                        )
+                    }
+
+                    setTimeout(() => {
+                        mobileMenu.classList.remove('hidden')
+                    }, 500)
+                } else {
+                    mobileMenu.classList.replace(
+                        'animate__fadeInRight',
+                        'animate__fadeOutRight'
+                    )
+
+                    setTimeout(() => {
+                        mobileMenu.classList.add('hidden')
+                    }, 500)
+                }
+            }
+        </script>
     </div>
 </div>
-
-<script is:inline>
-    // when anchor clicked scroll to section - 100px
-    const anchorLinks = document.querySelectorAll('a[href^="#"]')
-    const anchorLinksArr = Array.prototype.slice.call(anchorLinks)
-
-    anchorLinksArr.forEach((link) => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault()
-            const targetId = link.hash
-            const targetElement = document.querySelector(targetId)
-            const targetOffsetTop =
-                window.scrollY + targetElement.getBoundingClientRect().top - 100
-            window.scrollTo({
-                top: targetOffsetTop,
-                behavior: 'smooth',
-            })
-        })
-    })
-
-    function openMobileMenu() {
-        const mobileMenu = document.querySelector('#mobile-menu')
-
-        const isMobileMenuHidden = mobileMenu.classList.contains('hidden')
-
-        if (isMobileMenuHidden) {
-            const isMobileMenuFadeOut = mobileMenu.classList.contains(
-                'animate__fadeOutRight'
-            )
-
-            if (isMobileMenuFadeOut) {
-                mobileMenu.classList.replace(
-                    'animate__fadeOutRight',
-                    'animate__fadeInRight'
-                )
-            }
-
-            setTimeout(() => {
-                mobileMenu.classList.remove('hidden')
-            }, 500)
-        } else {
-            mobileMenu.classList.replace(
-                'animate__fadeInRight',
-                'animate__fadeOutRight'
-            )
-
-            setTimeout(() => {
-                mobileMenu.classList.add('hidden')
-            }, 500)
-        }
-    }
-</script>
